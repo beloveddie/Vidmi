@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { movies } from "./services/fakeMovieService";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">Vidly Build</header>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Stock</th>
+            <th>Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          {movies.map(
+            ({ _id, title, genre, numberInStock, dailyRentalRate }) => (
+              <tr key={_id}>
+                <td>{title}</td>
+                <td>{genre.name}</td>
+                <td>{numberInStock}</td>
+                <td>{dailyRentalRate}</td>
+              </tr>
+            )
+          )}
+        </tbody>
+      </table>
     </div>
   );
 }
