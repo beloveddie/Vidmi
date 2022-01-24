@@ -1,10 +1,10 @@
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 
-const Table = ({ headers, data }) => {
+const Table = ({ headings, data }) => {
   return (
     <table className="table table-striped container">
-      <TableHead headers={headers} />
+      <TableHead headings={headings} />
       <TableBody data={data} />
     </table>
   );

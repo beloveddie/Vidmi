@@ -1,9 +1,9 @@
-const TableHead = ({ headers }) => {
+const TableHead = ({ headings }) => {
   return (
     <thead>
       <tr>
-        {headers.map((header) => (
-          <th>{header}</th>
+        {headings.map((heading) => (
+          <th>{heading}</th>
         ))}
       </tr>
     </thead>

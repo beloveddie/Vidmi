@@ -2,11 +2,11 @@ import { movies } from "./services/fakeMovieService";
 import Table from "./components/Table";
 
 function App() {
-  const headers = ["Title", "Genre", "Stock", "Rate"];
+  const headings = ["Title", "Genre", "Stock", "Rate"];
   return (
     <div className="App">
       <header className="App-header">Vidly Build</header>
-      <Table data={movies} headers={headers} />
+      <Table data={movies} headings={headings} />
     </div>
   );
 }
