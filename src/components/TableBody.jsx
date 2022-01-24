@@ -1,12 +1,12 @@
 const TableBody = ({ data }) => {
   return (
     <tbody>
-      {data.map(({ _id, title, genre, numberInStock, dailyRentalRate }) => (
+      {data.map(({ _id, title, genre, stock, rate }) => (
         <tr key={_id}>
           <td>{title}</td>
           <td>{genre.name}</td>
-          <td>{numberInStock}</td>
-          <td>{dailyRentalRate}</td>
+          <td>{stock}</td>
+          <td>{rate}</td>
           <td>
             <button className="btn btn-danger">Delete</button>
           </td>
