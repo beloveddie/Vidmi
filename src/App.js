@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">Vidly Build</header>
-      <table>
+      <table className="table table-striped container">
         <thead>
           <tr>
             <th>Title</th>
@@ -21,6 +21,9 @@ function App() {
                 <td>{genre.name}</td>
                 <td>{numberInStock}</td>
                 <td>{dailyRentalRate}</td>
+                <td>
+                  <button className="btn btn-danger">Delete</button>
+                </td>
               </tr>
             )
           )}
