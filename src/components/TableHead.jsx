@@ -1,11 +1,10 @@
-const TableHead = () => {
+const TableHead = ({ headers }) => {
   return (
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Genre</th>
-        <th>Stock</th>
-        <th>Rate</th>
+        {headers.map((header) => (
+          <th>{header}</th>
+        ))}
       </tr>
     </thead>
   );
