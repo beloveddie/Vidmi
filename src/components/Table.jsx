@@ -5,6 +5,7 @@ import { useState } from "react";
 const Table = ({ headings, data, setData }) => {
   // set table sort order to ascending
   const [isAscending, setIsAscending] = useState(true);
+  const [sortColumn, setSortColumn] = useState("");
 
   const handleSort = (sortBy) => {
     const sortData = [...data];
@@ -19,6 +20,7 @@ const Table = ({ headings, data, setData }) => {
           if (sortByA > sortByB) return 1;
           return 0;
         }
+
         if (sortByA < sortByB) return 1;
         if (sortByA > sortByB) return -1;
         return 0;
@@ -46,6 +48,7 @@ const Table = ({ headings, data, setData }) => {
     });
     setData(sortData);
     setIsAscending(!isAscending);
+    setSortColumn(sortby);
   };
 
   const handleDelete = (id) => {
@@ -55,7 +58,12 @@ const Table = ({ headings, data, setData }) => {
 
   return (
     <table className="table table-striped container">
-      <TableHead headings={headings} handleSort={handleSort} />
+      <TableHead
+        headings={headings}
+        handleSort={handleSort}
+        isAscending={isAscending}
+        sortColumn={sortColumn}
+      />
       <TableBody data={data} handleDelete={handleDelete} />
     </table>
   );
