@@ -6,7 +6,7 @@ const TableHead = ({ headings, handleSort, isAscending, sortColumn }) => {
       <tr>
         {headings.map((heading) => (
           <th key={heading} onClick={() => handleSort(heading)}>
-            {heading}{" "}
+            {heading}
             {heading.toLowerCase() === sortColumn && isAscending ? (
               <RiArrowDropDownFill />
             ) : heading.toLowerCase() === sortColumn && !isAscending ? (

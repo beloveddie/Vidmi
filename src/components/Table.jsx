@@ -56,6 +56,14 @@ const Table = ({ headings, data, setData }) => {
     setData(newData);
   };
 
+  const handleLike = (datum) => {
+    const newData = [...data];
+    const index = newData.indexOf(datum);
+    datum[index] = { ...newData[index] };
+    newData[index].liked = !datum[index].liked;
+    setData(newData);
+  };
+
   return (
     <table className="table table-striped container">
       <TableHead
@@ -64,7 +72,11 @@ const Table = ({ headings, data, setData }) => {
         isAscending={isAscending}
         sortColumn={sortColumn}
       />
-      <TableBody data={data} handleDelete={handleDelete} />
+      <TableBody
+        data={data}
+        handleDelete={handleDelete}
+        handleLike={handleLike}
+      />
     </table>
   );
 };
