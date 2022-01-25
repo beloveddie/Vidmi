@@ -1,4 +1,4 @@
-const TableBody = ({ data }) => {
+const TableBody = ({ data, handleDelete }) => {
   return (
     <tbody>
       {data.map(({ _id, title, genre, stock, rate }) => (
@@ -8,7 +8,12 @@ const TableBody = ({ data }) => {
           <td>{stock}</td>
           <td>{rate}</td>
           <td>
-            <button className="btn btn-danger">Delete</button>
+            <button
+              className="btn btn-danger"
+              onClick={() => handleDelete(_id)}
+            >
+              Delete
+            </button>
           </td>
         </tr>
       ))}

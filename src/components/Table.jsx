@@ -48,10 +48,15 @@ const Table = ({ headings, data, setData }) => {
     setIsAscending(!isAscending);
   };
 
+  const handleDelete = (id) => {
+    const newData = data.filter((datum) => datum._id !== id);
+    setData(newData);
+  };
+
   return (
     <table className="table table-striped container">
       <TableHead headings={headings} handleSort={handleSort} />
-      <TableBody data={data} />
+      <TableBody data={data} handleDelete={handleDelete} />
     </table>
   );
 };
