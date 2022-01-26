@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
-th {
+th,
+.like {
   cursor: pointer;
 }
