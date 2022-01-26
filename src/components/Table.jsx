@@ -65,7 +65,7 @@ const Table = ({ headings, data, setData }) => {
   };
 
   return (
-    <table className="table table-striped container">
+    <table className="table table-striped table-sm container mt-2">
       <TableHead
         headings={headings}
         handleSort={handleSort}

@@ -12,12 +12,12 @@ const TableBody = ({ data, handleDelete, handleLike }) => {
             <td>{genre.name}</td>
             <td>{stock}</td>
             <td>{rate}</td>
-            <td onClick={() => handleLike(datum)}>
+            <td onClick={() => handleLike(datum)} className="like">
               {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
             </td>
             <td>
               <button
-                className="btn btn-danger"
+                className="btn btn-sm btn-danger"
                 onClick={() => handleDelete(_id)}
               >
                 Delete
