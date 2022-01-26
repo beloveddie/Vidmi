@@ -18,6 +18,7 @@ const TableBody = ({ data, handleDelete, handleLike }) => {
             <td>
               <button
                 className="btn btn-sm btn-danger"
+                id="delete"
                 onClick={() => handleDelete(_id)}
               >
                 Delete
