@@ -1,8 +1,8 @@
+import { useState } from "react";
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
-import { useState } from "react";
 
-const Table = ({ headings, data, setData }) => {
+const Table = ({ headings, currentData, data, setData }) => {
   // set table sort order to ascending
   const [isAscending, setIsAscending] = useState(true);
   const [sortColumn, setSortColumn] = useState("");
@@ -65,19 +65,21 @@ const Table = ({ headings, data, setData }) => {
   };
 
   return (
-    <table className="table table-striped  container mt-2">
-      <TableHead
-        headings={headings}
-        handleSort={handleSort}
-        isAscending={isAscending}
-        sortColumn={sortColumn}
-      />
-      <TableBody
-        data={data}
-        handleDelete={handleDelete}
-        handleLike={handleLike}
-      />
-    </table>
+    <>
+      <table className="table table-striped  container mt-2">
+        <TableHead
+          headings={headings}
+          handleSort={handleSort}
+          isAscending={isAscending}
+          sortColumn={sortColumn}
+        />
+        <TableBody
+          data={currentData}
+          handleDelete={handleDelete}
+          handleLike={handleLike}
+        />
+      </table>
+    </>
   );
 };
 
