@@ -1,6 +1,6 @@
 const Alert = ({ data }) => {
   return (
-    <div class="alert alert-primary" role="alert">
+    <div className="alert alert-primary" role="alert">
       No {data} available!
     </div>
   );
