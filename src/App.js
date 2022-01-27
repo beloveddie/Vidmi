@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { movies } from "./services/fakeMovieService";
-import Table from "./components/Table";
 import Nav from "./components/Nav";
 import Notification from "./components/Notification";
-import Alert from "./components/Alert";
+import PaginatedData from "./components/PaginatedData";
 
 function App() {
   const headings = ["Title", "Genre", "Stock", "Rate"],
@@ -11,17 +10,19 @@ function App() {
 
   // state values
   const [data, setData] = useState(movies);
+
   return (
     <div className="App">
       <Nav
         brand={brand}
         notification={<Notification data={data} dataName="Movies" />}
       />
-      {data.length ? (
-        <Table data={data} headings={headings} setData={setData} />
-      ) : (
-        <Alert data="movies" />
-      )}
+      <PaginatedData
+        itemsPerPage={3}
+        items={data}
+        headings={headings}
+        setData={setData}
+      />
     </div>
   );
 }
