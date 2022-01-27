@@ -5,7 +5,7 @@ const TableHead = ({ headings, handleSort, isAscending, sortColumn }) => {
     <thead>
       <tr>
         {headings.map((heading) => (
-          <th key={heading} onClick={() => handleSort(heading)}>
+          <th key={heading} scope="cols" onClick={() => handleSort(heading)}>
             {heading}
             {heading.toLowerCase() === sortColumn && isAscending ? (
               <RiArrowDropDownFill />
@@ -14,6 +14,8 @@ const TableHead = ({ headings, handleSort, isAscending, sortColumn }) => {
             ) : null}
           </th>
         ))}
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
       </tr>
     </thead>
   );
