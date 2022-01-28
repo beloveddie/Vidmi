@@ -13,7 +13,7 @@ const TableBody = ({ data, handleDelete, handleLike }) => {
               <td>{genre.name}</td>
               <td>{stock}</td>
               <td>{rate}</td>
-              <td onClick={() => handleLike(datum)} className="like">
+              <td onClick={() => handleLike(datum)}>
                 {liked ? <FaThumbsUp /> : <FaRegThumbsUp />}
               </td>
               <td>

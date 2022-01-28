@@ -66,7 +66,10 @@ const Table = ({ headings, currentData, data, setData }) => {
 
   return (
     <>
-      <table className="table table-striped  container mt-2">
+      <table
+        className="table table-striped  container mt-2"
+        style={{ width: "80%" }}
+      >
         <TableHead
           headings={headings}
           handleSort={handleSort}

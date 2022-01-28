@@ -6,7 +6,14 @@ import PaginatedData from "./components/PaginatedData";
 
 function App() {
   const headings = ["Title", "Genre", "Stock", "Rate"],
-    brand = "Vidly";
+    brand = (
+      <span>
+        Vidmi |{" "}
+        <span className="fs-6 fw-light font-monospace text-black-50">
+          movies with moves
+        </span>
+      </span>
+    );
 
   // state values
   const [data, setData] = useState(movies);
